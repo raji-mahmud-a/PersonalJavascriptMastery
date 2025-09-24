@@ -1,0 +1,1 @@
+alert(`First javascript beginner level Project \n Raji Mahmud 🎗🔥 `)
