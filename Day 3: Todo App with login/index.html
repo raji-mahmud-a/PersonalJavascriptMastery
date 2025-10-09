@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DoErr</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="max-h-[100vh] h-[100vh] flex items-center justify-center bg-blue-50">
+  <div id="AuthContainer" class="rounded-xl w-[95%] bg-gray-50 shadow-lg shadow-slate-300 p-6 max-w-[500px]">
+    <div>
+      <h1 class="font-bold text-blue-600 mb-3 text-4xl text-center">DoErr</h1>
+      <p class="text-gray-500 mb-3 text-lg text-center">Your personal Task Orchestration Architecture</p>
+    </div>
+    <div class="w-[100%] flex items-center text-center border-b border-gray-300 mb-4">
+      <button class="w-full text-center text-teal-600 font-bold text-xl border-blue-600 border-b-2 p-2" id="loginTab">Sign In</button>
+    </div>
+    <!-- Sign In Form -->
+    <form id="loginForm" class="flex flex-col justify-center items-center space-y-6">
+      <div class="w-full space-y-2 flex flex-col justify-center items-center">
+        <label for="loginEmail" class="w-full text-gray-900 font-bold text-xl ">username</label>
+        <input type="text" id="loginEmail" class="outline hover:outline-2 focus:outline-2 outline-blue-300 w-full p-[10px] text-[1.2rem] rounded-sm" required placeholder="Enter your username">
+      </div>
+      <div class="w-full space-y-2 flex flex-col justify-center items-center">
+        <label for="loginPassword" class="w-full text-gray-900 font-bold text-xl ">Password</label>
+        <input type="password" id="loginPassword" required class="outline hover:outline-2 focus:outline-2 outline-blue-300 w-full p-[10px] text-[1.2rem] rounded-sm" placeholder="Enter your password">
+      </div>
+      <button type="submit" class="hover:outline-2 focus:outline-2 focus:outline hover:outline  outline-blue-600 w-full bg-blue-600 font-bold font-xl p-[10px] text-[1.2rem] text-white rounded-lg hover:bg-blue-50 hover:text-blue-600" id="loginButton">
+        <span>Sign In</span>
+      </button>
+    </form>
+    <!-- Auth Message -->
+    <div id="authMessage" class="outline outline-red-600 bg-red-200 p-4 text-center text-red-600 rounded-xl mt-4 hidden"></div>
+  </div>
+  
+  <div id="PageContainer" class="rounded-xl w-[95%] bg-gray-50 shadow-lg shadow-slate-300 p-6 max-w-[500px] hidden">
+    <div class="flex flex-row mb-3 space-x-3">
+      <input type="text" id="newTodoInput" class="w-full outline hover:outline-2 focus:outline-2 outline-blue-300 p-[10px] text-[1.2rem] rounded-sm " placeholder="Input a new task here to add to task list"/>
+
+      <button id="newTodoInputBtn" class="hover:outline-2 focus:outline-2 focus:outline hover:outline  outline-blue-600 py-[1px] px-[10px] text-center bg-blue-600 font-bold text-[40px] text-white rounded-sm hover:bg-blue-50 hover:text-blue-600">
+        +
+      </button>
+    </div>
+    <hr class="border-b-2 border-blue-500"/>
+    <ul id="mainTodoList" class="mt-4">
+
+    </ul>
+  </div>
+  
+  
+<!--   javascript import -->
+  <script src="index.js"></script>
+</body>
+
+</html>
