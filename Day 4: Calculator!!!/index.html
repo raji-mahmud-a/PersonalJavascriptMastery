@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Calculatouer</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display-container">
+            <div class="display-info">
+                <span id="mode">DEG</span>
+                <span id="shift-indicator"></span>
+            </div>
+            <div class="display" id="display">0</div>
+        </div>
+        
+        <div class="buttons">
+            <div class="button-row-6">
+                <button class="btn-function" data-action="sin">sin</button>
+                <button class="btn-function" data-action="cos">cos</button>
+                <button class="btn-function" data-action="tan">tan</button>
+                <button class="btn-function" data-action="asin">asin</button>
+                <button class="btn-function" data-action="acos">acos</button>
+                <button class="btn-function" data-action="atan">atan</button>
+            </div>
+            
+            <div class="button-row-6">
+                <button class="btn-function" data-action="sinh">sinh</button>
+                <button class="btn-function" data-action="cosh">cosh</button>
+                <button class="btn-function" data-action="tanh">tanh</button>
+                <button class="btn-function" data-action="log">log</button>
+                <button class="btn-function" data-action="ln">ln</button>
+                <button class="btn-function" data-action="sqrt">√</button>
+            </div>
+            
+            <div class="button-row-6">
+                <button class="btn-function" data-action="square">x²</button>
+                <button class="btn-function" data-value="^">^</button>
+                <button class="btn-function" data-action="reciprocal">x⁻¹</button>
+                <button class="btn-function" data-value="(">(</button>
+                <button class="btn-function" data-value=")">)</button>
+                <button class="btn-function" data-action="negate">(-)</button>
+            </div>
+            
+            <div class="button-row">
+                <button class="btn-number" data-value="7">7</button>
+                <button class="btn-number" data-value="8">8</button>
+                <button class="btn-number" data-value="9">9</button>
+                <button class="btn-function" data-action="del" style="background-color: #112233;">DEL</button>
+                <button class="btn-function" data-action="ac" style="background-color: red;">AC</button>
+            </div>
+            
+            <div class="button-row">
+                <button class="btn-number" data-value="4">4</button>
+                <button class="btn-number" data-value="5">5</button>
+                <button class="btn-number" data-value="6">6</button>
+                <button class="btn-function" data-value="*">×</button>
+                <button class="btn-function" data-value="/">÷</button>
+            </div>
+            
+            <div class="button-row">
+                <button class="btn-number" data-value="1">1</button>
+                <button class="btn-number" data-value="2">2</button>
+                <button class="btn-number" data-value="3">3</button>
+                <button class="btn-function" data-value="+">+</button>
+                <button class="btn-function" data-value="-">-</button>
+            </div>
+            
+            <div class="button-row">
+                <button class="btn-number" data-value="0">0</button>
+                <button class="btn-number" data-value=".">.</button>
+                <button class="btn-function" data-value="E">EXP</button>
+                <button class="btn-function" data-action="ans">ANS</button>
+                <button class="btn-function" data-action="equals" style="background-color: forestgreen;">=</button>
+            </div>
+        </div>
+        
+        <div class="solar-panel">
+            <button class="solar-cell" >
+                constants
+            </button>
+        </div>
+        <div class="constantsBox">
+            <h1>List of Constants</h1>
+        </div>
+    </div>
+
+<script src="index.js">index.js</script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .calculator {
+            background: #1a1a1a;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            width: 340px;
+            position: relative;
+        }
+
+        .brand {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .brand-name {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .model {
+            font-size: 11px;
+        }
+
+        .vpam {
+            color: white;
+            font-size: 10px;
+            margin-bottom: 15px;
+        }
+
+        .display-container {
+            background: #c8d4c8;
+            border: 3px solid #333;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .display-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            color: #666;
+            margin-bottom: 8px;
+            height: 12px;
+        }
+
+        .display {
+            text-align: right;
+            font-size: 28px;
+            font-family: 'Courier New', monospace;
+            color: #000;
+            min-height: 35px;
+            overflow: hidden;
+            word-wrap: break-word;
+        }
+
+        .buttons {
+            display: grid;
+            gap: 3px;
+        }
+
+        .button-row {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 3px;
+            margin-bottom: 3px;
+        }
+
+        .button-row-6 {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 3px;
+            margin-bottom: 3px;
+        }
+
+        button {
+            padding: 8px 4px;
+            border: none;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .btn-purple {
+            background: #6b46c1;
+            color: white;
+        }
+
+        .btn-purple:hover {
+            background: #553c9a;
+        }
+
+        .btn-purple.active {
+            background: #9f7aea;
+        }
+
+        .btn-function {
+            background: #4a4a4a;
+            color: white;
+        }
+
+        .btn-function:hover {
+            background: #5a5a5a;
+        }
+
+        .btn-number {
+            background: #2d2d2d;
+            color: white;
+            font-size: 22px;
+        }
+
+        .btn-number:hover {
+            background: #3d3d3d;
+        }
+
+        .solar-panel {
+            display: flex;
+            gap: 4px;
+            margin-top: 15px;
+        }
+
+        .solar-cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+            flex: 1;
+            color: #fff;
+            background: #5200D3;
+            border-radius: 2px;
+            font-size: 1.2rem;
+        }
+        .constantsBox{
+            position: absolute;
+            border-radius: 5px;
+            background: #5200D3;
+            top: 25px;
+            left: 25px;
+            right: 25px;
+            height: calc(24rem);
+            overflow-y: scroll;
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            h1{
+                font-size: 2rem;
+                color: #F2F2F2;
+                margin-top:55rem;
+            }
+            .constant{
+                
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                flex-direction: column;
+                gap: 4px;
+                color: #FFF0F0;
+                *{
+                    width: 100%;
+                }
+                .constantVal{
+                    text-align: right;
+                }
+            }
+        }
+        
+        .show{
+            display: none;
+        }
