@@ -33,7 +33,14 @@ const Linksss = [
         GithubLink: 'https://github.com/raji-mahmud-a/PersonalJavascriptMastery/tree/main/Day-5-Date-and-Time-with-24-and-12-hr-toggle',
         DescriptionText: 'A digital clock made on JavaScript date object with a littlebit of Tailwind and equipped with 24/12 hour format toggle',
         CoverImg: '/img/img5.png'
-    }
+    },
+    {
+        ProjectName: '',
+        HomePageLink: '/Day-5-Word-and-and-character-counter-app/index.html',
+        GithubLink: 'https://github.com/raji-mahmud-a/PersonalJavascriptMastery/tree/main/Day-5-Word-and-and-character-counter-app/',
+        DescriptionText:'A word and character counter app made with javascript to count the amount of word or characters in your writeup',
+        CoverImg: '/img/img6.png'
+    },
 ]
 
 function truncate(str, n){
