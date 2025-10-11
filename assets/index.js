@@ -2,35 +2,35 @@ const Linksss = [
     {
         ProjectName: 'Hello World',
         HomePageLink: '/Day-1-Hello-world-with-an-alert/index.html',
-        GithubLink:'',
+        GithubLink:'https://github.com/raji-mahmud-a/PersonalJavascriptMastery/tree/main/Day-1-Hello-world-with-an-alert',
         DescriptionText: 'Well..... we all wrote an hello world program once, right? This is mine',
         CoverImg: '/img/img1.png'
     },
     {
         ProjectName: 'Digital Clock',
         HomePageLink:'/Day-2-Current-Date-and-Time/index.html',
-        GithubLink:'',
+        GithubLink:'https://github.com/raji-mahmud-a/PersonalJavascriptMastery/tree/main/Day-2-Current-Date-and-Time',
         DescriptionText: 'A digital clock made on JavaScript date object with a littlebit of Tailwind',
         CoverImg: '/img/img2.png'
     },
         {
         ProjectName: 'Todo App',
         HomePageLink: '/Day-3-Todo-App-with-login/index.html',
-        GithubLink:'',
+        GithubLink:'https://github.com/raji-mahmud-a/PersonalJavascriptMastery/tree/main/Day-3-Todo-App-with-login',
         DescriptionText: 'Well... thus is a task Orchestration Architecture with localStorage and secure encryption on login',
         CoverImg: '/img/img3.png'
     },
         {
         ProjectName: 'Calculator!!!',
         HomePageLink: '/Day-4-Calculator!!!/index.html',
-        GithubLink: '',
+        GithubLink: 'https://github.com/raji-mahmud-a/PersonalJavascriptMastery/tree/main/Day-4-Calculator!!!',
         DescriptionText: 'This is a mathematical expression evaluator built on JavaScript math library which is capable of processing scientific calculations and equipped with 28 useful constants across math and physics',
         CoverImg: '/img/img4.png'
     },
         {
         ProjectName: 'Date and time with 24/12 hour format',
         HomePageLink: '/Day-5-Date-and-Time-with-24-and-12-hr-toggle/index.html',
-        GithubLink: '',
+        GithubLink: 'https://github.com/raji-mahmud-a/PersonalJavascriptMastery/tree/main/Day-5-Date-and-Time-with-24-and-12-hr-toggle',
         DescriptionText: 'A digital clock made on JavaScript date object with a littlebit of Tailwind and equipped with 24/12 hour format toggle',
         CoverImg: '/img/img5.png'
     }
