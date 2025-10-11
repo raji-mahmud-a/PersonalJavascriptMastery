@@ -49,11 +49,11 @@ for (let link of Linksss) {
     CardContainerEl.innerHTML += `
          <div class="w-full hover:scale-115 bg-orange-400 overflow-hidden rounded-3xl flex items-center justify-center flex-col max-w-[300px]">
     <img src="${link.CoverImg}" alt="project...." class="w-full h-[200px]"/>
-    <div class="p-6 w-full flex items-center justify-center flex-col space-y-1">
+    <div class="p-4 w-full flex items-center justify-center flex-col space-y-1">
       <h1 class="underline text-stone-900 text-lg text-left w-full font-bold ">${ link.ProjectName }</h1>
       <p class="text-stone-700 ">${ descTxt }</p>
       
-      <div class="pt-3 w-full flex items-center justify-center flex-row space-x-4">
+      <div class="pt-3 w-full flex items-center justify-center flex-row space-x-2">
         <button class="btnnn hover:scale-115 w-full bg-stone-900 text-orange-500">
           <a href="${link.GithubLink}" class=" w-full h-full p-2 font-sm flex space-x-2 items-center justify-center" target="_blank">Source Code
             <i class="fa-brands fa-github font-xl"></i>
