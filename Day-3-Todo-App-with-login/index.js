@@ -41,8 +41,8 @@ loginTab.addEventListener("click", () => {
 
 
 localStorage.setItem('AuthCredentials', JSON.stringify({
-  'userName': 'mahmud',
-  'password': 'rest'
+  'userName': 'testing',
+  'password': 'test123'
 }))
 
 loginForm.addEventListener('submit', (e)=> {
