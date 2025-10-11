@@ -47,7 +47,7 @@ for (let link of Linksss) {
     let descTxt = truncate(link.DescriptionText, 115)
     
     CardContainerEl.innerHTML += `
-         <div class="w-full hover:scale-115 bg-orange-400 overflow-hidden rounded-3xl flex items-center justify-center flex-col max-w-[350px]">
+         <div class="w-full hover:scale-115 bg-orange-400 overflow-hidden rounded-3xl flex items-center justify-center flex-col max-w-[450px] w-full ">
     <img src="${link.CoverImg}" alt="project...." class="w-full h-[200px]"/>
     <div class="p-4 w-full flex items-center justify-center flex-col space-y-1">
       <h1 class="underline text-stone-900 text-lg text-left w-full font-bold ">${ link.ProjectName }</h1>
