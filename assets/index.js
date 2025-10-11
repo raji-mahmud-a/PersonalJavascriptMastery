@@ -3,32 +3,32 @@ const Linksss = [
         ProjectName: 'Hello World',
         HomePageLink: '/Day-1-Hello-world-with-an-alert/index.html',
         GithubLink:'https://github.com/raji-mahmud-a/PersonalJavascriptMastery/tree/main/Day-1-Hello-world-with-an-alert',
-        DescriptionText: 'Well..... we all wrote an hello world program once, right? This is mine',
+        DescriptionText: 'Well..... we all wrote an hello world program once, right? This is mine!!!',
         CoverImg: '/img/img1.png'
     },
     {
         ProjectName: 'Digital Clock',
         HomePageLink:'/Day-2-Current-Date-and-Time/index.html',
         GithubLink:'https://github.com/raji-mahmud-a/PersonalJavascriptMastery/tree/main/Day-2-Current-Date-and-Time',
-        DescriptionText: 'A digital clock made on JavaScript date object with a littlebit of Tailwind',
+        DescriptionText: 'A digital clock made on JavaScript date object with a little bit of Tailwind',
         CoverImg: '/img/img2.png'
     },
         {
         ProjectName: 'Todo App',
         HomePageLink: '/Day-3-Todo-App-with-login/index.html',
         GithubLink:'https://github.com/raji-mahmud-a/PersonalJavascriptMastery/tree/main/Day-3-Todo-App-with-login',
-        DescriptionText: 'Well... thus is a task Orchestration Architecture with localStorage and secure encryption on login',
+        DescriptionText: 'My todo app with Tailwind styling and localStorage for storage...',
         CoverImg: '/img/img3.png'
     },
         {
-        ProjectName: 'Calculator!!!',
+        ProjectName: 'Scientific Calculator!!!',
         HomePageLink: '/Day-4-Calculator!!!/index.html',
         GithubLink: 'https://github.com/raji-mahmud-a/PersonalJavascriptMastery/tree/main/Day-4-Calculator!!!',
-        DescriptionText: 'This is a mathematical expression evaluator built on JavaScript math library which is capable of processing scientific calculations and equipped with 28 useful constants across math and physics',
+        DescriptionText: 'Scientific calculator app made with JavaScript and with maths and physics constants',
         CoverImg: '/img/img4.png'
     },
         {
-        ProjectName: 'Date and time with 24/12 hour format',
+        ProjectName: '24/12 hour Digital clock',
         HomePageLink: '/Day-5-Date-and-Time-with-24-and-12-hr-toggle/index.html',
         GithubLink: 'https://github.com/raji-mahmud-a/PersonalJavascriptMastery/tree/main/Day-5-Date-and-Time-with-24-and-12-hr-toggle',
         DescriptionText: 'A digital clock made on JavaScript date object with a littlebit of Tailwind and equipped with 24/12 hour format toggle',
@@ -47,7 +47,7 @@ for (let link of Linksss) {
     let descTxt = truncate(link.DescriptionText, 115)
     
     CardContainerEl.innerHTML += `
-         <div class="w-full hover:scale-115 bg-orange-400 overflow-hidden rounded-3xl flex items-center justify-center flex-col max-w-[300px]">
+         <div class="w-full hover:scale-115 bg-orange-400 overflow-hidden rounded-3xl flex items-center justify-center flex-col max-w-[350px]">
     <img src="${link.CoverImg}" alt="project...." class="w-full h-[200px]"/>
     <div class="p-4 w-full flex items-center justify-center flex-col space-y-1">
       <h1 class="underline text-stone-900 text-lg text-left w-full font-bold ">${ link.ProjectName }</h1>
