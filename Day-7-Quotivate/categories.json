@@ -1,0 +1,62 @@
+[
+  {
+    "category": "motivation",
+    "count": 250
+  },
+  {
+    "category": "famous-quotes",
+    "count": 250
+  },
+  {
+    "category": "life",
+    "count": 182
+  },
+  {
+    "category": "love",
+    "count": 58
+  },
+  {
+    "category": "work",
+    "count": 55
+  },
+  {
+    "category": "spirituality",
+    "count": 50
+  },
+  {
+    "category": "creativity",
+    "count": 49
+  },
+  {
+    "category": "wisdom",
+    "count": 44
+  },
+  {
+    "category": "nature",
+    "count": 41
+  },
+  {
+    "category": "learning",
+    "count": 41
+  },
+  {
+    "category": "courage",
+    "count": 39
+  },
+  {
+    "category": "happiness",
+    "count": 33
+  },
+  {
+    "category": "humor",
+    "count": 30
+  },
+  {
+    "category": "friendship",
+    "count": 25
+  },
+  {
+    "category": "technology",
+    "count": 7
+  }
+]

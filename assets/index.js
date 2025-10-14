@@ -35,9 +35,16 @@ const Linksss = [
         CoverImg: '/img/img5.png'
     },
     {
-        ProjectName: '',
+        ProjectName: 'CharacterCount',
         HomePageLink: '/Day-6-Word-and-and-character-counter-app/index.html',
         GithubLink: 'https://github.com/raji-mahmud-a/PersonalJavascriptMastery/tree/main/Day-6-Word-and-and-character-counter-app/',
+        DescriptionText:'A word and character counter app made with javascript to count the amount of word or characters in your writeup',
+        CoverImg: '/img/img6.png'
+    },
+      {
+        ProjectName: 'QuotiVate',
+        HomePageLink: '/Day-7-Quotivate/index.html',
+        GithubLink: 'https://github.com/raji-mahmud-a/PersonalJavascriptMastery/tree/main//Day-7-Quotivate/',
         DescriptionText:'A word and character counter app made with javascript to count the amount of word or characters in your writeup',
         CoverImg: '/img/img6.png'
     },

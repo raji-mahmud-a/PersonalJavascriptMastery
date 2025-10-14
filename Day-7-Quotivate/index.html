@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quotivate</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+
+<body class="w-full h-screen bg-slate-900 flex items-center justify-center p-8">
+
+<div class="rounded-xl bg-slate-100 p-4 w-full max-w-[450px] flex items-center justify-between flex-col space-y-8 min-h-[200px] text-2xl">
+  <h1 class="text-4xl text-center text-indigo-700 font-bold">
+    QuotiVate
+  </h1>
+<div class="w-full text-indigo-500 flex flex-row justify-center space-x-2 text-lg items-center">
+    <label class="w-full" for="catSelect">Select a category:</label>
+    <select class="w-full text-gray-700 bg-white border border-gray-300 rounded-lg p-2 
+                   focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 
+                   appearance-none pr-8" 
+            name="catSelect" 
+            id="catSelect">
+    </select>
+</div>
+
+  <div id="card">
+
+  </div>
+  <div class="flex items-center justify-center space-x-3 text-center w-full">
+    <button class="bg-indigo-500 text-slate-100 rounded-lg font-bold px-4 py-2 hover:scale-115 hover:bg-slate-100 hover:text-indigo-500 hover:ring-2 hover:ring-indigo-500 focus:scale-115 focus:bg-slate-100 focus:text-indigo-500 focus:ring-2 focus:ring-indigo-500 w-full flex items-center justify-between transition-all duration-200 " onclick="prev()"><span class="material-symbols-outlined">
+keyboard_arrow_left
+</span>PREVIOUS</button>
+    <button class="bg-indigo-500 text-slate-100 rounded-lg font-bold px-4 py-2 hover:scale-115 hover:bg-slate-100 hover:text-indigo-500 hover:ring-2 hover:ring-indigo-500 focus:scale-115 focus:bg-slate-100 focus:text-indigo-500 focus:ring-2 focus:ring-indigo-500 w-full flex items-center justify-between transition-all duration-200 " onclick="next()">NEXT<span class="material-symbols-outlined">
+keyboard_arrow_right
+</span></button>
+  </div>
+</div>
+  
+  
+<script src="index.js"></script>
+</body>
+
+</html>
