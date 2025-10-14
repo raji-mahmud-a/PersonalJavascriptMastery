@@ -46,7 +46,7 @@ const Linksss = [
         HomePageLink: '/Day-7-Quotivate/index.html',
         GithubLink: 'https://github.com/raji-mahmud-a/PersonalJavascriptMastery/tree/main//Day-7-Quotivate/',
         DescriptionText:'A word and character counter app made with javascript to count the amount of word or characters in your writeup',
-        CoverImg: '/img/img6.png'
+        CoverImg: '/img/img7.png'
     },
 ]
 

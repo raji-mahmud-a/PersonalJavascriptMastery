@@ -144,3 +144,13 @@ const getallquotes = async () => {
 };
 
 getallquotes();
+
+    function download() {
+        html2canvas(document.getElementById("card")).then(function (canvas) {
+        const anchor = document.createElement("a");
+        anchor.download = "sample.jpg";
+        anchor.href = canvas.toDataURL();
+        anchor.target = "_blank";
+        anchor.click();
+       });
+    }
