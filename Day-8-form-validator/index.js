@@ -36,6 +36,3 @@ const validate = (() => {
   
   return {username, email, password}
 })()
-
-let tester = validate.password("Gr")
-console.log(tester)
