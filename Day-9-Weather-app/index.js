@@ -292,7 +292,7 @@ function getDayName(dateStr, index) {
         feelsLike: data.hourly.apparent_temperature.slice(0, 24).map(t => Math.round(t)),
         humidity: data.hourly.relative_humidity_2m.slice(0, 24),
         precipitationProbability: data.hourly.precipitation_probability.slice(0, 24),
-        precipitation: data.hourly.precipitation.slice(0, 24),
+        precipitation: data.hourly.precipitation.slice(0, 24).map(t => Math.round(t)),
         weatherCodes: data.hourly.weather_code.slice(0, 24),
         windSpeed: data.hourly.wind_speed_10m.slice(0, 24).map(w => Math.round(w)),
         windDirection: data.hourly.wind_direction_10m.slice(0, 24),
@@ -335,7 +335,7 @@ return fetchWeatherData(location)
   const data = await Weather(location.Coords)
   populateWeatherUI(location, data)
   } catch (e) {
-    throw new Error('An Error Occurred')
+    throw new Error('An Error Occurred', e)
   }
 }
 

@@ -44,10 +44,17 @@ const Linksss = [
       {
         ProjectName: 'QuotiVate',
         HomePageLink: '/Day-7-Quotivate/index.html',
-        GithubLink: 'https://github.com/raji-mahmud-a/PersonalJavascriptMastery/tree/main//Day-7-Quotivate/',
+        GithubLink: 'https://github.com/raji-mahmud-a/PersonalJavascriptMastery/tree/main/Day-7-Quotivate/',
         DescriptionText:'A word and character counter app made with javascript to count the amount of word or characters in your writeup',
         CoverImg: '/img/img7.png'
     },
+      {
+        ProjectName: 'Weather App',
+        HomePageLink: '/Day-9-Weather-app/index.html',
+        GithubLink: 'https://github.com/raji-mahmud-a/PersonalJavascriptMastery/tree/main/Day-9-Weather-app/',
+        DescriptionText: 'A premium weather app that uses decice gps and ip address to get location and then gets weather data for that location',
+        CoverImg: '/img/img8.png'
+      }
 ]
 
 function truncate(str, n){

@@ -306,51 +306,74 @@ const populateWeatherUI = function(location, data) {
   `
 
             // Create Precipitation Chart
-            const precipCtx = document.getElementById('precipChart').getContext('2d');
-            new Chart(precipCtx, {
-                type: 'bar',
-                data: {
-                    labels: data.hourly.times.slice(0, 12).map(t => formatTime(t)),
-                    datasets: [{
-                        label: 'Precipitation (mm)',
-                        data: data.hourly.precipitation.slice(0, 12),
-                        backgroundColor: 'rgba(96, 165, 250, 0.7)',
-                        borderColor: 'rgba(96, 165, 250, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    plugins: {
-                        legend: {
-                            labels: {
-                                color: 'white'
-                            }
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                color: 'white'
-                            },
-                            grid: {
-                                color: 'rgba(255, 255, 255, 0.1)'
-                            }
-                        },
-                        x: {
-                            ticks: {
-                                color: 'white'
-                            },
-                            grid: {
-                                color: 'rgba(255, 255, 255, 0.1)'
-                            }
+const precipCtx = document.getElementById('precipChart');
+if (precipCtx) {
+    new Chart(precipCtx, {
+        type: 'bar',
+        data: {
+            labels: data.hourly.times.slice(0, 12).map(t => formatTime(t)),
+            datasets: [{
+                label: 'Precipitation (mm)',
+                data: data.hourly.temperatures.slice(0, 12),
+                backgroundColor: 'rgba(251, 191, 36, 0.2)',
+                borderColor: 'rgba(251, 191, 36, 1)',
+                borderWidth: 2,
+                borderRadius: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    labels: {
+                        color: 'white',
+                        font: {
+                            size: 14
                         }
                     }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    titleColor: 'white',
+                    bodyColor: 'white',
+                    borderColor: 'rgba(255, 255, 255, 0.3)',
+                    borderWidth: 1
                 }
-            });
-
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: 'white',
+                        font: {
+                            size: 12
+                        }
+                    },
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)',
+                        lineWidth: 1
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: 'white',
+                        font: {
+                            size: 11
+                        },
+                        maxRotation: 0,
+                        autoSkip: true
+                    },
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)',
+                        lineWidth: 1
+                    }
+                }
+            }
+        }
+    });
+}
             // Create Temperature Chart
             const tempCtx = document.getElementById('tempChart').getContext('2d');
             new Chart(tempCtx, {
