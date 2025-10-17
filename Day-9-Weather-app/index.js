@@ -1,10 +1,12 @@
 //========  File Imports  ========//
 import Toast from './assets/toast.js';
+import populateWeatherUI from './assets/buildUI.js';
 
-const app = (async() => {
-  const bodym = document.getElementById('main')
-  
-  const Locator = async () => {
+
+const bodym = document.getElementById('main')
+const app = async () => {
+  try {
+    const Locator = async () => {
   const LocationIQAPI_KEY = 'pk.503d6bf94a473414c92b66c4ee1c162d'
   
   const toast = Toast
@@ -15,7 +17,6 @@ const iplocation = async () => {
     const data = await ipLocation.json();
     return { lat: data.latitude, lon: data.longitude };
   } catch (error) {
-    console.log('IP location Failed:', error)
     throw new Error('Failed to get location by IP')
   }
 }
@@ -44,7 +45,6 @@ const getCoordinates = async () => {
     const ipPromise = iplocation()
     
     const coords = await geoPromise.catch(async (error)=> {
-      console.log(error.message)
       return ipPromise
     })
     
@@ -92,7 +92,7 @@ async function getAndLogLocationIQ() {
       reverseToastController.dismiss();
     }
     await toast.warning("City name could not be resolved. Coordinates are available.", 5000);
-    console.error("❌ ERROR during LocationIQ API call:", error);
+    throw new Error("❌ ERROR during LocationIQ API call:", error);
     return "Unknown City";
   }
 }
@@ -166,14 +166,6 @@ function getDayName(dateStr, index) {
 /**
  * Format time from ISO string
  */
-function formatTime(isoString) {
-  const date = new Date(isoString);
-  return date.toLocaleTimeString('en-US', { 
-    hour: '2-digit', 
-    minute: '2-digit',
-    hour12: false 
-  });
-}
 
 
   
@@ -337,52 +329,85 @@ function formatTime(isoString) {
   }
 }
 
-
-
 return fetchWeatherData(location)
 }
-  bodym.innerHTML = `
-  <div class="flex items-center justify-center text-gray-200 h-full w-full">
-  <div class="w-6 h-6 border-4 items-center mx-2 border-gray-200 border-t-transparent border-solid rounded-full animate-spin"></div>
-  loading.....
-</div>
-`
   const location = await Locator()
   const data = await Weather(location.Coords)
-  
-  console.log(data)
-  const changeData = ((location, data) => {
-    bodym.innerHTML = `
-            <!-- Header -->
-        <header class="flex items-center justify-start mb-6 pt-4">
-            <div class="flex items-center gap-3">
-                <i class="fas fa-map-marker-alt text-white text-2xl"></i>
-                <h1 id="location-name" class="text-white text-3xl font-semibold">${location. City}</h1>
-            </div>
-        </header>
+  populateWeatherUI(location, data)
+  } catch (e) {
+    throw new Error('An Error Occurred')
+  }
+}
 
-        <!-- Main Weather Card -->
-        <div class="glass-card rounded-3xl p-8 mb-4">
-            <div class="flex justify-between items-center gap-2">
-                <div>
-                    <div id="current-temp" class="text-white text-7xl font-semibold">${data.current.temperature}°</div>
-            
-                </div>
-                       <div class="text-gray-200 text-xl space-y-1">
-                        <div>
-                            <i class="fas fa-arrow-up"></i><span id="temp-high"> ${data.today.high}</span> / 
-                            <i class="fas fa-arrow-down"></i><span id="temp-low"> ${data.today.low}</span>
-                        </div>
-                        <div class='text-sm'>Feels like <span id="feels-like"> Feels Like: ${data.current.feelsLike}</span></div>
-                    </div>
-                <div class="text-right">
-                    <div id="weather-icon" class="text-6xl">
-                        <i class="fas fa-cloud-sun text-gray-200"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
+const init = (()=> {
+  try {
+    app()
+  } catch (error) {
+    bodym.innerHTML = `
+      <div id="error-message-block" class="p-6 bg-red-50 border border-red-300 rounded-lg shadow-md">
+  <div class="flex items-start space-x-4">
+    <svg class="h-6 w-6 text-red-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.3 16c-.77 1.333.192 3 1.732 3z" />
+    </svg>
+    
+    <div>
+      <h4 class="text-lg font-semibold text-red-800">Process Failed!: ${error.message}</h4>
+      <p class="mt-1 text-sm text-red-700">
+        An internal error occurred. We're attempting to recover.
+      </p>
+
+      <div class="mt-3 text-sm font-medium text-red-700">
+        <span class="font-bold">Refreshing in:</span> 
+        <span id="partial-countdown" class="text-red-900 ml-1">5:00</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="mt-4 text-center">
+    <button onclick="location.reload();" class="inline-flex items-center px-3 py-1.5 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+      Refresh Now
+    </button>
+  </div>
+</div>
 
     `
-  })(location, data)
+    
+    
+    let timeInSeconds = 300; 
+    const countdownElement = document.getElementById('partial-countdown');
+
+    function formatTime(totalSeconds) {
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+        const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
+        
+        return `${minutes}:${formattedSeconds}`;
+    }
+
+    function updateCountdown() {
+        if (!countdownElement) {
+            clearInterval(timer);
+            return;
+        }
+
+        if (timeInSeconds <= 0) {
+            clearInterval(timer);
+            countdownElement.parentElement.innerHTML = '<span class="font-bold text-red-900">Refreshing page...</span>';
+            
+            setTimeout(() => {
+                window.location.reload(); 
+            }, 1500);
+            return;
+        }
+
+        countdownElement.textContent = formatTime(timeInSeconds);
+        timeInSeconds--;
+    }
+    
+    if (countdownElement) {
+        countdownElement.textContent = formatTime(timeInSeconds);
+        const timer = setInterval(updateCountdown, 1000);
+    }
+  }
+  
 })()
